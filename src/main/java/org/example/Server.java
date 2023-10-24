@@ -12,14 +12,14 @@ import static spark.Spark.*;
 public class Server {
 
     private static final String USER_AGENT = "Mozilla/5.0";
-    private static final String GET_URL = "localhost:4568/collatz";
+    private static final String GET_URL = "http://ec2-18-232-122-146.compute-1.amazonaws.com:4568/Collatz";
 
     public static void main(String[] args) throws IOException {
         port(getPort());
         get("/", (req, res) -> {
             return response();
         });
-        get("collatz", (req, res) -> {
+        get("Collatz", (req, res) -> {
             String secuence = req.queryParams("value");
             return "{\n " +
                     "\n" +
